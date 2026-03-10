@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details - EduTest</title>
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+<body class="bg-slate-50 min-h-screen">
+    <nav class="bg-white border-b border-slate-200 h-16 flex items-center">
+        <div class="max-w-7xl mx-auto px-4 w-full flex justify-between items-center">
+            <a href="dashboard.html" class="text-indigo-600 font-bold flex items-center gap-2" id="back-to-dashboard">
+                <span>←</span> Back to Dashboard
+            </a>
+            <div class="flex items-center gap-4">
+                <span class="text-sm text-slate-500" id="user-status">Logged in as admin</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <!-- Left Column: Course Info -->
+        <div class="lg:col-span-2 space-y-8">
+            <section id="course-header">
+                <h1 class="text-4xl font-extrabold text-slate-900" id="course-title">Loading Course...</h1>
+                <div class="flex items-center gap-4 mt-4 text-slate-600">
+                    <span class="flex items-center gap-1">⭐ 4.8 (2.4k reviews)</span>
+                    <span class="flex items-center gap-1">👤 15,432 students</span>
+                    <span class="flex items-center gap-1">🕒 12 hours total</span>
+                </div>
+            </section>
+
+            <img src="https://picsum.photos/seed/course/800/400" class="w-full rounded-3xl shadow-lg border border-slate-200" alt="Course Banner" id="course-banner">
+
+            <section class="space-y-4">
+                <h2 class="text-2xl font-bold text-slate-900">What you'll learn</h2>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-3" id="learning-outcomes">
+                    <li class="flex items-start gap-2 text-slate-700">✅ Master the core concepts of the subject</li>
+                    <li class="flex items-start gap-2 text-slate-700">✅ Build real-world projects from scratch</li>
+                    <li class="flex items-start gap-2 text-slate-700">✅ Understand industry best practices</li>
+                    <li class="flex items-start gap-2 text-slate-700">✅ Get certified and boost your career</li>
+                </ul>
+            </section>
+
+            <section class="space-y-4" id="course-syllabus">
+                <h2 class="text-2xl font-bold text-slate-900">Course Content</h2>
+                <div class="border border-slate-200 rounded-xl overflow-hidden bg-white">
+                    <div class="p-4 border-b border-slate-100 flex justify-between items-center cursor-pointer hover:bg-slate-50">
+                        <span class="font-medium">Section 1: Getting Started</span>
+                        <span class="text-slate-400">3 lectures • 45 min</span>
+                    </div>
+                    <div class="p-4 border-b border-slate-100 flex justify-between items-center cursor-pointer hover:bg-slate-50">
+                        <span class="font-medium">Section 2: Core Fundamentals</span>
+                        <span class="text-slate-400">8 lectures • 2.5 hours</span>
+                    </div>
+                    <div class="p-4 flex justify-between items-center cursor-pointer hover:bg-slate-50">
+                        <span class="font-medium">Section 3: Advanced Topics</span>
+                        <span class="text-slate-400">12 lectures • 5 hours</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Right Column: Enrollment Form -->
+        <div class="lg:col-span-1">
+            <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 sticky top-24">
+                <h3 class="text-2xl font-bold text-slate-900 mb-6">Enroll Now</h3>
+                
+                <form id="enrollment-form" class="space-y-4">
+                    <div class="space-y-1">
+                        <label for="full-name" class="text-sm font-medium text-slate-700">Full Name</label>
+                        <input type="text" id="full-name" class="w-full test-input" placeholder="John Doe" required>
+                    </div>
+                    <div class="space-y-1">
+                        <label for="email" class="text-sm font-medium text-slate-700">Email Address</label>
+                        <input type="email" id="email" class="w-full test-input" placeholder="john@example.com" required>
+                    </div>
+                    <div class="space-y-1">
+                        <label for="phone" class="text-sm font-medium text-slate-700">Phone Number</label>
+                        <input type="tel" id="phone" class="w-full test-input" placeholder="+1 (555) 000-0000" required>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-100">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-slate-500">Course Price</span>
+                            <span class="font-medium text-slate-900" id="base-price">$0.00</span>
+                        </div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-slate-500">Discount</span>
+                            <span class="text-green-600 font-medium">-$0.00</span>
+                        </div>
+                        <div class="flex justify-between items-center text-xl font-bold text-slate-900">
+                            <span>Total</span>
+                            <span id="total-price">$0.00</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="coupon-code" class="text-sm font-medium text-slate-700">Coupon Code</label>
+                        <div class="flex gap-2">
+                            <input type="text" id="coupon-code" class="flex-1 test-input" placeholder="SAVE20">
+                            <button type="button" id="apply-coupon" class="bg-slate-100 text-slate-700 px-4 py-2 rounded-lg font-medium hover:bg-slate-200">Apply</button>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-2 py-2">
+                        <input type="checkbox" id="terms-check" class="mt-1" required>
+                        <label for="terms-check" class="text-xs text-slate-500">I agree to the <a href="#" class="text-indigo-600 underline">Terms of Enrollment</a> and <a href="#" class="text-indigo-600 underline">Refund Policy</a>.</label>
+                    </div>
+
+                    <button type="submit" id="enroll-btn" class="w-full test-button py-4 text-lg mt-4">Complete Enrollment</button>
+                </form>
+
+                <div class="mt-6 flex justify-center gap-4 grayscale opacity-50">
+                    <span title="Visa">💳</span>
+                    <span title="Mastercard">💳</span>
+                    <span title="PayPal">🅿️</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full text-center shadow-2xl">
+            <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-4xl mx-auto mb-6">✓</div>
+            <h2 class="text-2xl font-bold text-slate-900 mb-2">Enrollment Successful!</h2>
+            <p class="text-slate-500 mb-8">Congratulations! You are now enrolled in the course. Check your email for the receipt and login instructions.</p>
+            <button id="close-modal" class="w-full test-button py-3">Go to Dashboard</button>
+        </div>
+    </div>
+
+    <script type="module" src="/src/script.js"></script>
+</body>
+</html>

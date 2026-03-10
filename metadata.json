@@ -1,0 +1,5 @@
+{
+  "name": "EduTest: Course Enrollment Platform",
+  "description": "A multi-page educational platform designed for automation testing, featuring login, registration, dashboard, and course enrollment pages with comprehensive UI elements.",
+  "requestFramePermissions": []
+}
